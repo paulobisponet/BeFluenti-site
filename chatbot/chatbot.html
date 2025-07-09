@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Chat educacional Befluent - Tire suas dúvidas sobre cursos, download de apps e estudos com nosso assistente virtual.">
+    <meta name="keywords" content="chat educacional, suporte befluent, assistente virtual, dúvidas estudo">
+    <meta name="author" content="Paulo e Mônica Bispo">
+    
+    <title>Chat Educacional - Befluent</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="chatbot.css">
+</head>
+<body class="chatbot-page">
+    <!-- Header -->
+    <header class="chat-header">
+        <div class="chat-header-content">
+            <div class="chat-header-info">
+                <div class="assistant-avatar">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <div class="assistant-details">
+                    <h1>Assistente Befluent</h1>
+                    <span class="status online">Online</span>
+                </div>
+            </div>
+            <div class="chat-actions">
+                <button class="chat-action-btn" onclick="clearChat()" title="Limpar conversa">
+                    <i class="fas fa-trash"></i>
+                </button>
+                <button class="chat-action-btn" onclick="window.close()" title="Fechar chat">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Chat Container -->
+    <main class="chat-container">
+        <!-- Chat Messages -->
+        <div class="chat-messages" id="chatMessages" role="log" aria-live="polite" aria-label="Mensagens do chat">
+            <!-- Mensagem de boas-vindas -->
+            <div class="message bot-message">
+                <div class="message-avatar">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <div class="message-content">
+                    <div class="message-bubble">
+                        <p>👋 Olá! Sou o assistente virtual da <strong>Befluent</strong>!</p>
+                        <p>Estou aqui para ajudar com suas dúvidas sobre:</p>
+                        <ul>
+                            <li>📚 Como acessar cursos e turmas</li>
+                            <li>📱 Download de aplicativos</li>
+                            <li>📝 Questões sobre estudos</li>
+                            <li>💡 Dicas de aprendizagem</li>
+                        </ul>
+                        <p>Como posso te ajudar hoje?</p>
+                    </div>
+                    <span class="message-time">Agora</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="quick-actions">
+            <h3>Perguntas Frequentes:</h3>
+            <div class="quick-buttons">
+                <button class="quick-btn" onclick="sendQuickMessage('Como faço login?')">
+                    <i class="fas fa-sign-in-alt"></i>
+                    Como faço login?
+                </button>
+                <button class="quick-btn" onclick="sendQuickMessage('Onde baixo o quiz?')">
+                    <i class="fas fa-download"></i>
+                    Onde baixo o quiz?
+                </button>
+                <button class="quick-btn" onclick="sendQuickMessage('O que vai cair na prova?')">
+                    <i class="fas fa-clipboard-list"></i>
+                    O que vai cair na prova?
+                </button>
+                <button class="quick-btn" onclick="sendQuickMessage('Como estudar melhor?')">
+                    <i class="fas fa-brain"></i>
+                    Como estudar melhor?
+                </button>
+                <button class="quick-btn" onclick="sendQuickMessage('Contato dos professores')">
+                    <i class="fas fa-user-teacher"></i>
+                    Contato dos professores
+                </button>
+                <button class="quick-btn" onclick="sendQuickMessage('Horários de atendimento')">
+                    <i class="fas fa-clock"></i>
+                    Horários de atendimento
+                </button>
+            </div>
+        </div>
+
+        <!-- Chat Input -->
+        <div class="chat-input-container">
+            <form class="chat-input-form" onsubmit="sendMessage(event)">
+                <div class="input-wrapper">
+                    <input 
+                        type="text" 
+                        id="messageInput" 
+                        placeholder="Digite sua mensagem..." 
+                        autocomplete="off"
+                        maxlength="500"
+                    >
+                    <button type="submit" class="send-btn" aria-label="Enviar mensagem">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </form>
+            <div class="typing-indicator" id="typingIndicator" style="display: none;">
+                <div class="typing-dots">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <span class="typing-text">Assistente está digitando...</span>
+            </div>
+        </div>
+    </main>
+
+    <!-- Powered by -->
+    <footer class="chat-footer">
+        <p>Powered by <strong>Befluent</strong> - Educar com amor, aprender com propósito</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="chatbot.js"></script>
+</body>
+</html>
