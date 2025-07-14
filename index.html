@@ -22,6 +22,132 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <link rel="stylesheet" href="assets/css/style.css">
+    
+    <!-- Estilos para a seção de downloads -->
+    <style>
+        .downloads-section {
+            background: #f8f9fa;
+            padding: 80px 0;
+        }
+        
+        .downloads-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            margin-top: 40px;
+        }
+        
+        .download-item {
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        
+        .download-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .download-icon {
+            font-size: 2.5rem;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            color: white;
+            flex-shrink: 0;
+        }
+        
+        .download-icon.pdf {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+        }
+        
+        .download-icon.docx {
+            background: linear-gradient(135deg, #2980b9, #3498db);
+        }
+        
+        .download-icon.zip {
+            background: linear-gradient(135deg, #f39c12, #e67e22);
+        }
+        
+        .download-icon.image {
+            background: linear-gradient(135deg, #9b59b6, #8e44ad);
+        }
+        
+        .download-info {
+            flex: 1;
+        }
+        
+        .download-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin: 0 0 6px 0;
+        }
+        
+        .download-description {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+            margin: 0;
+        }
+        
+        .download-btn {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            flex-shrink: 0;
+        }
+        
+        .download-btn:hover {
+            background: linear-gradient(135deg, #2980b9, #3498db);
+            transform: scale(1.05);
+            color: white;
+            text-decoration: none;
+        }
+        
+        .downloads-section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .downloads-section .section-subtitle {
+            text-align: center;
+            color: #7f8c8d;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        @media (max-width: 768px) {
+            .download-item {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .downloads-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Skip to main content for accessibility -->
@@ -140,6 +266,108 @@
                         </div>
                         <h3>Navegação Acessível</h3>
                         <p>Interface leve, intuitiva e acessível, pensada para todos os tipos de usuários.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Downloads Section - NOVA SEÇÃO ADICIONADA -->
+        <section class="downloads-section" aria-labelledby="downloads-title">
+            <div class="container">
+                <h2 id="downloads-title">📥 Materiais para Download</h2>
+                <p class="section-subtitle">
+                    Baixe nossos materiais educacionais gratuitos e potencialize seus estudos com recursos exclusivos desenvolvidos por nossa equipe pedagógica.
+                </p>
+                
+                <div class="downloads-grid">
+                    <!-- Quiz de Português -->
+                    <div class="download-item">
+                        <div class="download-icon pdf">
+                            <i class="fas fa-file-pdf"></i>
+                        </div>
+                        <div class="download-info">
+                            <h3 class="download-title">Quiz de Português</h3>
+                            <p class="download-description">Exercícios de interpretação de texto e gramática para ensino fundamental</p>
+                        </div>
+                        <a href="assets/downloads/quiz-portugues.pdf" 
+                           class="download-btn" 
+                           download
+                           aria-label="Baixar Quiz de Português em PDF">
+                            <i class="fas fa-download"></i>
+                            Baixar
+                        </a>
+                    </div>
+
+                    <!-- Roteiro de Redação -->
+                    <div class="download-item">
+                        <div class="download-icon docx">
+                            <i class="fas fa-file-word"></i>
+                        </div>
+                        <div class="download-info">
+                            <h3 class="download-title">Roteiro de Redação</h3>
+                            <p class="download-description">Guia completo para estruturação de textos dissertativos e narrativos</p>
+                        </div>
+                        <a href="assets/downloads/roteiro-redacao.docx" 
+                           class="download-btn" 
+                           download
+                           aria-label="Baixar Roteiro de Redação em DOCX">
+                            <i class="fas fa-download"></i>
+                            Baixar
+                        </a>
+                    </div>
+
+                    <!-- Instalador do App -->
+                    <div class="download-item">
+                        <div class="download-icon zip">
+                            <i class="fas fa-file-archive"></i>
+                        </div>
+                        <div class="download-info">
+                            <h3 class="download-title">Instalador do App</h3>
+                            <p class="download-description">Aplicativo educativo Befluent para estudo offline e gamificado</p>
+                        </div>
+                        <a href="assets/downloads/app-installer.zip" 
+                           class="download-btn" 
+                           download
+                           aria-label="Baixar Instalador do App em ZIP">
+                            <i class="fas fa-download"></i>
+                            Baixar
+                        </a>
+                    </div>
+
+                    <!-- Cronograma do Curso -->
+                    <div class="download-item">
+                        <div class="download-icon image">
+                            <i class="fas fa-file-image"></i>
+                        </div>
+                        <div class="download-info">
+                            <h3 class="download-title">Cronograma do Curso</h3>
+                            <p class="download-description">Planejamento visual com datas e conteúdos de todas as aulas</p>
+                        </div>
+                        <a href="assets/downloads/cronograma.png" 
+                           class="download-btn" 
+                           download
+                           aria-label="Baixar Cronograma do Curso em PNG">
+                            <i class="fas fa-download"></i>
+                            Baixar
+                        </a>
+                    </div>
+
+                    <!-- Guia de Vocabulário -->
+                    <div class="download-item">
+                        <div class="download-icon pdf">
+                            <i class="fas fa-file-pdf"></i>
+                        </div>
+                        <div class="download-info">
+                            <h3 class="download-title">Guia de Vocabulário</h3>
+                            <p class="download-description">Dicionário ilustrado com palavras essenciais para vestibulares</p>
+                        </div>
+                        <a href="assets/downloads/guia-vocabulario.pdf" 
+                           class="download-btn" 
+                           download
+                           aria-label="Baixar Guia de Vocabulário em PDF">
+                            <i class="fas fa-download"></i>
+                            Baixar
+                        </a>
                     </div>
                 </div>
             </div>
